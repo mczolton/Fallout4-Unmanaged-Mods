@@ -1,0 +1,108 @@
+# Format is as follows:
+#
+# Material, Nif, Scale, Probability, NormalVelocity, RandomVelocity, ParticleSpacingScale, lifetime
+#
+# valid types are in Debris.h: 	DT_BONE, DT_CLOTH, DT_CREATURE, DT_DIRT, DT_EGG, DT_GLASS, DT_GLASS_CERAMIC, DT_GOO, DT_METAL, DT_PAPER, DT_PLASTIC, DT_STONE, 
+#      DT_STONE_BRICK, DT_STONE_CONCRETE, DT_TIRE, DT_WOOD, DT_EXPLOSION, DT_DEATHCLAW, DT_EXTRA_A, DT_EXTRA_B, DT_EXTRA_C, DT_EXTRA_D, DT_EXTRA_E, DT_EXTRA_F
+#
+# Note: probabilities for a particle type (e.g.: DT_STONE) should sum to 1.0 for correct distributions
+#		Starting from the first item in the list, the first that sum to 1 are considered small chunks.
+#		Anything that sums from 1-1.5 will be medium chunks, and from 1.5-2 will be large chunks.
+# Note: normalVelocity default is 50m/s
+# Note: randomVelocity perturbs the normal velocity in any direction, the default strength is 1m/s
+# Note: ParticleSpacingScale When rasterizing flex particles into debris, scale the spacing by this amount.  defaults is 1
+# Note: lifetime default is FLT_MAX (won't die)
+
+DT_STONE, Meshes\Debris\RoundRock1.nif, 0.10, 0.8, 200.0, 70.0
+DT_STONE, Meshes\Debris\RoundRock2.nif, 0.28, 0.5, 200.0, 100.0
+DT_STONE, Meshes\Debris\RoundRock1.nif, 0.18, 0.4, 150.0, 70.0
+DT_STONE, Meshes\Debris\RoundRock1.nif, 0.42 0.3, 200.0, 100.0
+
+DT_STONE_BRICK, Meshes\Debris\RoundRock1.nif, 0.10, 0.8, 150.0, 70.0
+DT_STONE_BRICK, Meshes\Debris\RoundRock2.nif, 0.28, 0.7, 200.0, 100.0
+DT_STONE_BRICK, Meshes\Debris\RoundRock2.nif, 0.4, 0.7, 200.0, 100.0
+
+DT_STONE_CONCRETE, Meshes\Debris\RoundRock1.nif, 0.1, 0.7, 200, 60
+DT_STONE_CONCRETE, Meshes\Debris\RoundRock2.nif, 0.25, 0.3, 200, 20
+DT_STONE_CONCRETE, Meshes\Debris\FlatRock1.nif, 0.25, 0.15, 250, 80
+DT_STONE_CONCRETE, Meshes\Debris\FlatRock2.nif, 0.25, 0.1, 250, 80
+DT_STONE_CONCRETE, Meshes\Debris\Lg_Concrete_1.nif, 0.1, 0.25, 150, 80
+DT_STONE_CONCRETE, Meshes\Debris\RoundRock1.nif, 0.35, 0.2, 200.0, 100.0
+DT_STONE_CONCRETE, Meshes\Debris\RoundRock2.nif, 0.35, 0.2, 200.0, 100.0
+DT_STONE_CONCRETE, Meshes\Debris\FlatRock1.nif, 0.40, 0.1, 250, 80
+DT_STONE_CONCRETE, Meshes\Debris\FlatRock1.nif, 0.40, 0.1, 50, 1
+
+DT_DIRT, Meshes\Debris\RoundRock1_Dirt.nif, 0.1, 0.9, 250, 120
+DT_DIRT, Meshes\Debris\RoundRock2_Dirt.nif, 0.25, 0.4, 200, 50
+DT_DIRT, Meshes\Debris\RoundRock2_Dirt.nif, 0.30, 0.2, 150, 80
+DT_DIRT, Meshes\Debris\RoundRock2_Dirt.nif, 0.4, 0.3, 250, 80
+DT_DIRT, Meshes\Debris\FlatRock1_Dirt.nif, 0.30, 0.2, 250, 80
+
+DT_GLASS, Meshes\Debris\Glass1.nif, 0.075, 0.8, 200, 100, 0.60
+DT_GLASS, Meshes\Debris\Glass2.nif, 0.075, 0.2, 150, 75, 0.37
+DT_GLASS, Meshes\Debris\Glass2.nif, 0.075, 0.2, 50, 1, 0.37
+
+DT_GLASS_CERAMIC, Meshes\Debris\FlatRock1.nif, 0.13, 0.8, 200, 100
+DT_GLASS_CERAMIC, Meshes\Debris\FlatRock2.nif, 0.13, 0.2, 150, 75
+DT_GLASS_CERAMIC, Meshes\Debris\FlatRock2.nif, 0.13, 0.2, 50, 1
+
+DT_WOOD, Meshes\Debris\Splinter1.nif, 0.20, 0.8, 230, 100
+DT_WOOD, Meshes\Debris\Splinter2.nif, 0.35, 0.5, 175, 70 
+DT_WOOD, Meshes\Debris\Splinter2.nif, 0.45, 0.25, 200, 70 
+DT_WOOD, Meshes\Debris\Splinter2.nif, 0.65, 0.5, 275, 70 
+
+DT_METAL, Meshes\Debris\MetalDebris01.nif, 0.325, 0.25, 125.0, 125.0, 0.5
+DT_METAL, Meshes\Debris\MetalDebris02.nif, 0.2, 0.25, 125.0, 125.0, 0.25
+
+DT_EXPLOSION, Meshes\Debris\MetalDebris01.nif, 0.65, 0.5, 0.0, 0.0, 0.5
+DT_EXPLOSION, Meshes\Debris\MetalDebris02.nif, 0.5, 0.5, 0.0, 0.0, 0.5
+
+# note the inital velocity of the deathclaw attack is 3000, so, remember that when setting the random velocity here and the NormalVelcityScale below.
+DT_DEATHCLAW, Meshes\Debris\RoundRock2.nif,		0.35, 0.15,	0, 100.0
+DT_DEATHCLAW, Meshes\Debris\FlatRock1.nif,		0.40, 0.15,	0, 80
+DT_DEATHCLAW, Meshes\Debris\RoundRock1_Dirt.nif, 0.1, 0.23, 0, 120
+DT_DEATHCLAW, Meshes\Debris\RoundRock2_Dirt.nif, 0.4, 0.23, 0, 80
+DT_DEATHCLAW, Meshes\Debris\FlatRock1_Dirt.nif, 0.30, 0.24, 0, 80
+
+# Explosion settings
+#
+# Fallout explosions have basic properties of strength, radius and vertical bias. These properties
+# are used to seed force fields in Flex, which are then scaled by the parameters below.
+#
+# Format: WeaponName, StrengthMinScale, StrengthMaxScale, VerticalBiasScale, RadiusScale, CountMin, CountMax
+#
+# WeaponName - The name of the weapon spawning this explosion, if not found then Default entry will be used
+# StrengthMinScale, StrengthMaxScale - A per-particle, random scaling on the game's force field strength.
+# VerticalBiasScale - Scales how much the force is biased in the vertical direction (+z)
+# RadiusScale - Scales the game's explosion radius
+# CountMin -  The minimum number of additional debris pieces to spawn for the explosion (uses DT_EXPLOSION group)
+# CountMax - The maximum number of additional debris pieces to spawn for the explosion (uses DT_EXPLOSION group)
+# WeaponName, StrengthMin, StrengthMax, VerticalBias, Radius, CountMin, CountMax
+Default, 				0.1, 0.35, 2.0, 1.0, 0, 0
+Non Weapon,				0.1, 0.35, 2.0, 1.0, 0, 0
+Power Armor,			5.0, 7.5, 4.0, 1.0, 20, 100
+Fragmentation Mine,		0.1, 0.35, 2.0, 1.0, 20, 100
+Fragmentation Grenade, 	0.05, 0.22, 2.0, 1.5, 20, 100
+Missile Launcher, 		0.4, 1.40, 2.0, 1.5, 20, 100
+#Gamma Gun,				0.1, 0.35, 2.0, 1.0, 0, 0
+#Gauss Rifle, 			0.1, 0.35, 2.0, 1.0, 0, 0
+#Cryolator, 				0.1, 0.35, 2.0, 1.0, 0, 0
+Broadsider, 				0.1, 0.35, 2.0, 1.0, 20, 100
+Fatman, 				0.1, 0.35, 2.5, 1.0, 35, 100
+
+# Creature Attack Settings.
+#
+# Fallout creature attacks have basic properties of debris type, count, normal velocity range (min/max)
+#
+# Format: CREATURE, CreatureName, FormId, DebrisType, NormalVelcityScale_MIN, NormalVelcityScale_MAX, CountMin, CountMax
+#
+# CREATURE - A Keyword that must be here so the code knowns what it is looking for.
+# CreatureName - The base name of the creature, for example, Mythic Deathclaw is Deathclaw
+# FormId - This is an internal number used to identify the attack type that creates the projectile, some creatures may have multiple attackes, for now, we only deal with one.
+#          NOTE: If you want every projectile like attack and not just a specific one to create the flex, then set FormId to 0.
+# DebrisType - the debris type from above that is used
+# NormalVelcityScale_MIN, NormalVelcityScale_MAX - A per-debris piece scale used on the velocity of the attack.
+# CountMin -  The minimum number of additional debris pieces to spawn for the attack
+# CountMax - The maximum number of additional debris pieces to spawn for the attack
+CREATURE, Deathclaw, 1127226, DT_DEATHCLAW, 0.15, 1.0, 75, 150 
+
